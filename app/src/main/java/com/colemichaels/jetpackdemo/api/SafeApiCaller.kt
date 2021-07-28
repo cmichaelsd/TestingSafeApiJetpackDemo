@@ -33,7 +33,10 @@ class SafeApiCaller(private val moshi: Moshi) {
 
     private fun convertErrorBody(throwable: HttpException): ErrorResponse? {
         return try {
-            ErrorResponse(throwable.message())
+            throwable.response()?.errorBody()?.charStream()?.readText()?.let {
+                val adapter = moshi.adapter(ErrorResponse::class.java)
+                adapter.fromJson(it)
+            }
         } catch (exception: Exception) {
             null
         }
