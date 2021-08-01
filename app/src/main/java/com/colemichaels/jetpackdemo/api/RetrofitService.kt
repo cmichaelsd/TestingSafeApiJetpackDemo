@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface RetrofitService {
-    @GET("api/games/")
+    @GET("api/games")
     suspend fun getGames(
         @Query("filter") filter: String,
         @Query("limit") limit: Int
