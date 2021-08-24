@@ -1,6 +1,6 @@
 # Android Safe API Jetpack Demo
 > The project demonstrates a MVP for using modern Jetpack Architecture and testing API calls with databinding enabled.
-> There is magic happening with the OkHttp3IdlingResource the only reason it works is because "android.enableJetifier=true" is set in grable.properties.
+> There is magic happening with the OkHttp3IdlingResource the only reason it works is because "android.enableJetifier=true" is set in gradle.properties.
 > Make sure to enter a Giantbomb API key in MyInterceptor as constant API_TOKEN.
 
 > Espresso does not know how to wait for asynchronous calls so these idling resources are created to inform the test when it can proceed.
